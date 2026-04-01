@@ -1,0 +1,21 @@
+package patrones.creacionales.singleton;
+
+public class Logger {
+
+    private static Logger instancia;
+
+    private Logger() {
+        System.out.println("Logger inicializado");
+    }
+
+    public static Logger getInstance() {
+        if (instancia == null) {
+            instancia = new Logger();
+        }
+        return instancia;
+    }
+
+    public void log(String mensaje) {
+        System.out.println("LOG: " + mensaje);
+    }
+}
